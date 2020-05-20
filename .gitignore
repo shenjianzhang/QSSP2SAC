@@ -1,3 +1,5 @@
-/GreenFunctions
+/GreenFunctions/
 *.SAC
 *.mod
+*.dat
+!/Example/*.dat
