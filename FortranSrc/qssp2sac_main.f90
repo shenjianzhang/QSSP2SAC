@@ -48,7 +48,7 @@
 ! Assuming you run QSSP with the input data file `qssp_exmaple.inp` and obtain 3 outputs as `example_disp_e.dat`
 !`example_disp_n.dat`, and `example_disp_z.dat` (these four files could be found in folder `./Example`).
 ! Then you could run the command as
-!```
+! ```
 ! $ cd ./Example
 ! $ mv ../FortranSrc/qssp2sac ./
 ! $ ./qssp2sac
@@ -58,9 +58,9 @@
 ! example_disp_e.dat
 !  Create SAC file: EXAMPLE.STA1.DISP.BXE.SAC
 !  Create SAC file: EXAMPLE.STA2.DISP.BXE.SAC
-!```
-!and get two SAC files as `EXAMPLE.STA1.DISP.BXE.SAC` and `EXAMPLE.STA2.DISP.BXE.SAC`. You could check header information
-!and plot waveform using program SAC (Seismic Analysis Code).
+! ```
+! and get two SAC files as `EXAMPLE.STA1.DISP.BXE.SAC` and `EXAMPLE.STA2.DISP.BXE.SAC`. You could check header information
+! and plot waveform using program SAC (Seismic Analysis Code).
 !
 !
 ! Written by

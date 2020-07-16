@@ -34,7 +34,7 @@ integer(kind=4) :: i            ! index
 integer(kind=4) :: flag         ! function/subroutine status
 real(kind=4) :: dt4, b4         ! delta t and b for SAC header, SINGLE-PRECISION
 character(len=80) :: sprefix, prefixup ! short version, upper case of prefix for output file of QSSP
-character(len=80) :: sacname                   ! name of SAC file
+character(len=80),dimension(Nr) :: sacname                   ! name of SAC file
 character(len=10) :: sstaname, stnameup        ! short version and uppercase of station name
 type(sachead) :: header         ! head of SAC file
 
@@ -46,7 +46,7 @@ do i = 1, Nr
     call upper(sprefix(1:len(sprefix)), prefixup, len(sprefix), len(prefixup))
     call upper(sstaname(1:len(sstaname)), stnameup, len(sstaname), len(stnameup))
     ! file name of SAC
-    sacname = trim(adjustl(prefixup))//'.'//trim(adjustl(stnameup))//'.'//trim(adjustl(datatype))//'.'//trim(adjustl(direction))//'.SAC'
+    sacname(i) = trim(adjustl(prefixup))//'.'//trim(adjustl(stnameup))//'.'//trim(adjustl(datatype))//'.'//trim(adjustl(direction))//'.SAC'
     ! use reduced time as origin time for each seismogram
     b4 = real(stin(i,3), kind=4)
     ! initailize SAC head
@@ -75,9 +75,10 @@ do i = 1, Nr
         header%cmpaz = SAC_rnull
         header%cmpinc = SAC_rnull
     endselect
+    
     ! write SAC file
-    call sacio_writesac(trim(adjustl(sacname)), header, seisdata(:,i), flag)
-    write(*,*)'Create SAC file: ', trim(adjustl(sacname))
+    call sacio_writesac(sacname(i), header, seisdata(:,i), flag)
+    write(*,*)'Create SAC file: ', trim(adjustl(sacname(i)))
 enddo
 
 return
