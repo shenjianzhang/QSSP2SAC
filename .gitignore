@@ -1,5 +1,6 @@
 /GreenFunctions/
 *.SAC
-*.mod
+/FortranSrc/*.mod
+/FortranSrc/*.o
 *.dat
 !/Example/*.dat
