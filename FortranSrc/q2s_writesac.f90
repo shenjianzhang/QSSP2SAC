@@ -46,7 +46,8 @@ do i = 1, Nr
     call upper(sprefix(1:len(sprefix)), prefixup, len(sprefix), len(prefixup))
     call upper(sstaname(1:len(sstaname)), stnameup, len(sstaname), len(stnameup))
     ! file name of SAC
-    sacname(i) = trim(adjustl(prefixup))//'.'//trim(adjustl(stnameup))//'.'//trim(adjustl(datatype))//'.'//trim(adjustl(direction))//'.SAC'
+    sacname(i) = trim(adjustl(prefixup))//'.'//trim(adjustl(stnameup))//'.'&
+            &//trim(adjustl(datatype))//'.'//trim(adjustl(direction))//'.SAC'
     ! use reduced time as origin time for each seismogram
     b4 = real(stin(i,3), kind=4)
     ! initailize SAC head

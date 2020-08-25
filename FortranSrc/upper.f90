@@ -15,8 +15,8 @@ subroutine upper(strin, strout, Nlin, Nlout)
 implicit none
 
 ! declaration
-character(len=Nlin),intent(in) :: strin
-character(len=Nlout),intent(out) :: strout
+character(len=*),intent(in) :: strin
+character(len=*),intent(out) :: strout
 integer(kind=4),intent(in) :: Nlin, Nlout
 integer(kind=4) :: i,ascidx
 
